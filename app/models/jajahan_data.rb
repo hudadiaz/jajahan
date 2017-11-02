@@ -4,36 +4,12 @@ class JajahanData
     type: 'Select data type from types',
     area: 'If data type is postcode, select area from postcode_areas',
   ].freeze
-  @types = [
-    'bank',
-    'country',
-    'district',
-    'dun',
-    'education-level',
-    'gender',
-    'state',
-    'subdistrict',
-    'postcode',
-    'parliament'
-  ].freeze
-  @postcode_areas = [
-    'johor',
-    'kedah',
-    'kelantan',
-    'melaka',
-    'negeri-sembilan',
-    'pahang',
-    'perak',
-    'perlis',
-    'pulau-pinang',
-    'sabah',
-    'sarawak',
-    'selangor',
-    'terengganu',
-    'wp-kuala-lumpur',
-    'wp-labuan',
-    'wp-putrajaya'
-  ].freeze
+  @types = Dir.entries("#{Rails.root}/db/jajahan/")
+            .select {|f| !File.directory? f}
+            .map { |f| f.remove('.php') }.freeze
+  @postcode_areas = Dir.entries("#{Rails.root}/db/jajahan/postcode")
+                      .select {|f| !File.directory? f}
+                      .map { |f| f.remove('.php') }.freeze
 
   def self.options
     {
@@ -45,11 +21,14 @@ class JajahanData
   end
 
   def self.fetch_data params
-    return @@data[params[:type]] if @@data[params[:type]]
-    if @types.include? params[:type]
-      data = File.read("#{Rails.root}/db/#{params[:type]}.php") unless params[:type] == 'postcode'
-      if params[:type] == 'postcode' && @postcode_areas.include?(params[:area])
-        data = File.read("#{Rails.root}/db/postcode/#{params[:area]}.php")
+    type = params[:type].downcase
+    cache_name = "#{type}-#{params[:area]}"
+    return @@data[cache_name] if @@data[cache_name]
+
+    if @types.include? type
+      data = File.read("#{Rails.root}/db/jajahan/#{type}.php") unless type == 'postcode'
+      if type == 'postcode' && @postcode_areas.include?(params[:area])
+        data = File.read("#{Rails.root}/db/jajahan/postcode/#{params[:area]}.php")
       end
 
       data = data.scan(/\$[\s\S]*?\];/).last
@@ -58,8 +37,10 @@ class JajahanData
       data = eval data
       data = data.map { |e| e = e.first } # convert array->arrays->object to array->objects
 
-      @@data[params[:type]] = data
-      return @@data[params[:type]]
+      p 'PARSED DATA'
+      return @@data[cache_name] ||= data
     end
+  rescue NoMethodError
+    self.options
   end
 end

@@ -521,10 +521,9 @@ $items = [
     // ['id' => '030305', 'name' => 'TEMANGAN', 'district_id' => '0303'], // via statistic.gov.my - 030319
     ['id' => '030306', 'name' => 'JOH', 'district_id' => '0303'],
     // ['id' => '030306', 'name' => 'ULU SAT', 'district_id' => '0303'], // via statistic.gov.my - 030322
-    ['id' => '030306', 'name' => 'KELAWEH', 'district_id' => '0303'],
-    ['id' => '030307', 'name' => 'KERAWANG', 'district_id' => '0303'],
-    ['id' => '030308', 'name' => 'KERILLA', 'district_id' => '0303'],
-    ['id' => '030309', 'name' => 'KUALA KERAK', 'district_id' => '0303'],
+    ['id' => '030307', 'name' => 'KELAWEH', 'district_id' => '0303'],
+    ['id' => '030308', 'name' => 'KERAWANG', 'district_id' => '0303'],
+    ['id' => '030309', 'name' => 'KERILLA', 'district_id' => '0303'],
     ['id' => '030310', 'name' => 'KUALA KERAK', 'district_id' => '0303'],
     ['id' => '030311', 'name' => 'LABOK', 'district_id' => '0303'],
     ['id' => '030312', 'name' => 'LIMAU HANTU', 'district_id' => '0303'],
@@ -534,10 +533,10 @@ $items = [
     ['id' => '030316', 'name' => 'PEMANOK', 'district_id' => '0303'],
     ['id' => '030317', 'name' => 'PULAU CHONDONG', 'district_id' => '0303'],
     ['id' => '030318', 'name' => 'RAJA', 'district_id' => '0303'],
-    ['id' => '030319', 'name' => 'TEMANGAN', 'district_id' => '0303'],
-    ['id' => '030320', 'name' => 'TENGAH', 'district_id' => '0303'],
-    ['id' => '030321', 'name' => 'TOK BOK', 'district_id' => '0303'],
-    ['id' => '030322', 'name' => 'ULU SAT', 'district_id' => '0303'],
+    // ['id' => '030319', 'name' => 'TEMANGAN', 'district_id' => '0303'], // duplicate dalam sddsa. remove dulu kalau tak akan ada masalah untuk seed
+    ['id' => '030319', 'name' => 'TENGAH', 'district_id' => '0303'],
+    ['id' => '030320', 'name' => 'TOK BOK', 'district_id' => '0303'],
+    ['id' => '030321', 'name' => 'ULU SAT', 'district_id' => '0303'],
 
     ['id' => '030340', 'name' => 'BANDAR MACHANG', 'district_id' => '0303'],
     
@@ -1919,19 +1918,20 @@ $items = [
     ['id' => '050210', 'name' => 'SRI MENANTI', 'district_id' => '0502'],
     ['id' => '050211', 'name' => 'TERACHI', 'district_id' => '0502'],
 
-    ['id' => '050211', 'name' => 'BANDAR TERACHI', 'district_id' => '0502'],
+    // ['id' => '050211', 'name' => 'BANDAR TERACHI', 'district_id' => '0502'], // deprecated?
+    ['id' => '050240', 'name' => 'BANDAR KUALA PILAH', 'district_id' => '0502'],
 
-    ['id' => '050211', 'name' => 'PEKAN DANGI', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN GUNUNG PASIR', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN JOHOL', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN PARIT TINGGI', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN SENALING', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN TANJONG IPOH', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN JUASSEH', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN BUKIT GELUGOR', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN MELANG', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN AR MAWANG', 'district_id' => '0502'],
-    ['id' => '050211', 'name' => 'PEKAN DANGI BARU', 'district_id' => '0502'],
+    ['id' => '050270', 'name' => 'PEKAN DANGI', 'district_id' => '0502'],
+    ['id' => '050271', 'name' => 'PEKAN GUNUNG PASIR', 'district_id' => '0502'],
+    ['id' => '050272', 'name' => 'PEKAN JOHOL', 'district_id' => '0502'],
+    ['id' => '050273', 'name' => 'PEKAN PARIT TINGGI', 'district_id' => '0502'],
+    ['id' => '050274', 'name' => 'PEKAN SENALING', 'district_id' => '0502'],
+    ['id' => '050275', 'name' => 'PEKAN TANJONG IPOH', 'district_id' => '0502'],
+    ['id' => '050276', 'name' => 'PEKAN JUASSEH', 'district_id' => '0502'],
+    ['id' => '050277', 'name' => 'PEKAN BUKIT GELUGOR', 'district_id' => '0502'],
+    ['id' => '050278', 'name' => 'PEKAN MELANG', 'district_id' => '0502'],
+    ['id' => '050279', 'name' => 'PEKAN AR MAWANG', 'district_id' => '0502'],
+    ['id' => '050280', 'name' => 'PEKAN DANGI BARU', 'district_id' => '0502'],
 
     /*
      * === PORT DICKSON
