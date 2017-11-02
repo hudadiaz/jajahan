@@ -2242,3 +2242,15 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 82ms (Views: 81.7ms)
 
 
+Started GET "/?type=religion" for 127.0.0.1 at 2017-11-02 16:40:20 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"type"=>"religion"}
+Completed 200 OK in 32ms (Views: 0.6ms)
+
+
+Started GET "/?type=religion" for 127.0.0.1 at 2017-11-02 16:40:38 +0800
+Processing by HomeController#index as HTML
+  Parameters: {"type"=>"religion"}
+Completed 200 OK in 1ms (Views: 0.5ms)
+
+
